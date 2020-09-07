@@ -1,4 +1,4 @@
 node_modules
 bin/*
 !bin/www
-
+public/images
