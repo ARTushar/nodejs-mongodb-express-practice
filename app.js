@@ -16,6 +16,15 @@ var leaderRouter = require('./routes/leaderRouter');
 var config = require('./config');
 var app = express();
 
+//secure traffic only
+app.all('*', (req, res, next) => {
+    if(req.secure) {
+        return next();
+    } else {
+        res.redirect(307, 'https://' + req.hostname + ":" + app.get('secPort') + req.url);
+    }
+});
+
 const mongoose = require('mongoose');
 const Dishes = require('./models/dishes');
 
