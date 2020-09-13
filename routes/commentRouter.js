@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const authenticate = require('../authenticate');
-const Comments = require('../models/commentes');
+const Comments = require('../models/comments');
 const cors = require('./cors');
 const commentRouter = express.Router();
 
